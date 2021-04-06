@@ -3,6 +3,7 @@ package red.kea.leetcode.exercise;
 import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 /**
  * @author： KeA
@@ -41,12 +42,12 @@ import java.util.Collections;
 public class QuestionNo3 {
 
     public static void main(String[] args) {
-        int i = lengthOfLongestSubstring1("abcabcbb");
+        int i = lengthOfLongestSubstring2("abcdafghemnca");
         System.out.println(i);
     }
 
     //使用双重for循环，从第一位往后依次取字符串，看该字符串时候含有下一个字符
-    public static int lengthOfLongestSubstring1(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         if (s.length() == 0) {
             return 0;
         }
@@ -73,6 +74,21 @@ public class QuestionNo3 {
             if (max < arrayList.get(i)) {
                 max = arrayList.get(i);
             }
+        }
+        return max;
+    }
+
+
+    public static int lengthOfLongestSubstring2(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        int max = 0, start = 0;
+        for (int end = 0; end < s.length(); end++) {
+            char ch = s.charAt(end);
+            if (map.containsKey(ch)){
+                start = Math.max(map.get(ch)+1,start);
+            }
+            max = Math.max(max,end - start + 1);
+            map.put(ch,end);
         }
         return max;
     }
