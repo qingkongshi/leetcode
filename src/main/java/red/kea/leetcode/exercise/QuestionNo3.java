@@ -48,37 +48,26 @@ public class QuestionNo3 {
 
     //使用双重for循环，从第一位往后依次取字符串，看该字符串时候含有下一个字符
     public static int lengthOfLongestSubstring(String s) {
-        if (s.length() == 0) {
-            return 0;
-        }
+        int max = 0;
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < s.length(); i++) {
             int count = 0;
             for (int j = i + 1; count < s.length() - i; count++, j++) {
                 //执行到最后一位，未发现重复字符
                 if (j==s.length()){
-                    arrayList.add(j - i);
+                    max = Math.max(max,j-i);
                     break;
                 }
                 //未执行的最后一位，判断当前字符串时候包含下一位
                 if (s.substring(i, j).contains(s.substring(j, j + 1))) {
-                    arrayList.add(j - i);
-                    break;
+                    max = Math.max(max,j-i);
                 }
-            }
-        }
-        //取最大值
-//        Integer max = Collections.max(arrayList);
-        Integer max = arrayList.get(0);
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (max < arrayList.get(i)) {
-                max = arrayList.get(i);
             }
         }
         return max;
     }
 
-
+    // 使用map，将字符作为键，下标作为值
     public static int lengthOfLongestSubstring2(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
         int max = 0, start = 0;
