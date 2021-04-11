@@ -1,5 +1,8 @@
 package red.kea.leetcode.exercise;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author： KeA
  * @date： 2021-04-09 18:55:15
@@ -37,6 +40,8 @@ public class QuestionNo5 {
     }
 
     public static String longestPalindrome(String s) {
+        Map<String,Integer> map = new HashMap<>();
+
         return s;
     }
 }
