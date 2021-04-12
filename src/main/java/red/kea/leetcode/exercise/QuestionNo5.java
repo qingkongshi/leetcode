@@ -40,8 +40,16 @@ public class QuestionNo5 {
     }
 
     public static String longestPalindrome(String s) {
-        Map<String,Integer> map = new HashMap<>();
+        Map<Character,Integer> map = new HashMap<>();
+        int start = 0;
+        int max = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (map.containsKey(ch)){
 
+            }
+            map.put(ch,i);
+        }
         return s;
     }
 }
