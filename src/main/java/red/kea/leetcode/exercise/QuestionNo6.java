@@ -1,5 +1,7 @@
 package red.kea.leetcode.exercise;
 
+import java.util.Queue;
+
 /**
  * @author： KeA
  * @date： 2021-04-20 16:39:11
@@ -46,6 +48,10 @@ package red.kea.leetcode.exercise;
  */
 public class QuestionNo6 {
     public String convert(String s, int numRows) {
+
+        for (char char1 : s.toCharArray()){
+
+        }
 
 
         return null;
