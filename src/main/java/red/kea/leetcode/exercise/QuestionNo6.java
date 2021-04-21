@@ -1,5 +1,7 @@
 package red.kea.leetcode.exercise;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -47,13 +49,50 @@ import java.util.Queue;
  * 1 <= numRows <= 1000
  */
 public class QuestionNo6 {
-    public String convert(String s, int numRows) {
 
-        for (char char1 : s.toCharArray()){
-
+    public static String convert(String s, int numRows) {
+        // 如果行数为1，则直接返回
+        if (numRows == 1){
+            return s;
         }
+        // 创建numRows个集合
+        List<List<Character>> list  = new ArrayList<>();
+        for (int i = 0 ;i<numRows ; i++){
+            List<Character> line = new ArrayList<>();
+            list.add(line);
+        }
+        // 往返运动的脚标  也是行数
+        int a = 0;
 
+        // 方向 0 正向 1 反向
+        int direction = 0 ;
+        for (Character letter : s.toCharArray()){
+            list.get(a).add(letter);
 
-        return null;
+            if (direction == 0){
+                a++;
+            }
+            if (direction == 1){
+                a--;
+            }
+            if (a == 0){
+                direction = 0;
+            }
+            if (a == numRows-1){
+                direction = 1;
+            }
+        }
+        StringBuffer sb = new StringBuffer();
+        list.forEach(lines -> {
+            lines.forEach(one->{
+                sb.append(one);
+            });
+        });
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String test = convert("ABCDE", 4);
+        System.out.println(test);
     }
 }
