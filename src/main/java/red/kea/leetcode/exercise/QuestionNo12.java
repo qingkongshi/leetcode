@@ -51,7 +51,28 @@ package red.kea.leetcode.exercise;
  * 1 <= num <= 3999
  */
 public class QuestionNo12 {
+    //  I       II      III     IV      V       VI      VII     VIII    IX      X
+    //  XI      XII     XIII    XIV     XV      XVI     XVII    XVIII   XIX     XX
+    //  XXI     XXII    XXIII   XXIV    XXV     XXVI    XXVII   XXVIII  XXIX    XXX
+    //  XXXI    XXXII   XXXIII  XXXIV   XXXV    XXXVI   XXXVII  XXXVIII XXXIX   XL
+    //  XLI     XLII    XLIII   XLIV    XLV     XLVI    XLVII   XLVIII  XLIX    L
+    //  LI      LII     LIII    LIV     LV      LVI     LVII    LVIII   LIX     LX
+    //  LXI     LXII    LXIII   LXIV    LXV
     public static String intToRoman(int num) {
-        return null;
+        String last  = "";
+        while (num>0){
+            if (num%10 == num %5){
+//                if ()
+            }
+
+            last = num%10 == num%5 ? "V" :  "X";
+            num = num /10;
+        }
+
+        return last;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(intToRoman(9));
     }
 }
