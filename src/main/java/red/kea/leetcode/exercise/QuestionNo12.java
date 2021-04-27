@@ -59,20 +59,20 @@ public class QuestionNo12 {
     //  LI      LII     LIII    LIV     LV      LVI     LVII    LVIII   LIX     LX
     //  LXI     LXII    LXIII   LXIV    LXV
     public static String intToRoman(int num) {
-        String last  = "";
-        while (num>0){
-            if (num%10 == num %5){
-//                if ()
+        int[] values = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+        String[] romans = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0 ;i<values.length;i++){
+            while (values[i]<=num){
+                num = num - values[i];
+                sb.append(romans[i]);
             }
-
-            last = num%10 == num%5 ? "V" :  "X";
-            num = num /10;
         }
-
-        return last;
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(intToRoman(9));
+        System.out.println(intToRoman(108));
     }
 }
