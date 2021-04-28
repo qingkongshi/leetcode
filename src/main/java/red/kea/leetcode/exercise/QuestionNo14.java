@@ -51,10 +51,5 @@ public class QuestionNo14 {
     public static void main(String[] args) {
         String[] strings = {"flower","","flight"};
         System.out.println(longestCommonPrefix(strings));
-
-//        String a = "ab";
-//        char c = a.charAt(3);
-//        System.out.println(c);
-
     }
 }
