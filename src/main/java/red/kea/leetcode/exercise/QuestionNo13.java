@@ -1,5 +1,8 @@
 package red.kea.leetcode.exercise;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author： KeA
  * @date： 2021-04-27 13:20:11
@@ -30,7 +33,36 @@ public class QuestionNo13 {
         return num;
     }
 
+    // 评论区给出神奇解法
+    public static int romanToInt2(String s){
+        s = s.replace("CM","a");
+        s = s.replace("CD","b");
+        s = s.replace("XC","c");
+        s = s.replace("XL","d");
+        s = s.replace("IX","e");
+        s = s.replace("IV","f");
+        Map<Character,Integer> com = new HashMap<>();
+        com.put('M',1000);
+        com.put('a',900);
+        com.put('D',500);
+        com.put('b',400);
+        com.put('C',100);
+        com.put('c',90);
+        com.put('L',50);
+        com.put('d',40);
+        com.put('X',10);
+        com.put('e',9);
+        com.put('V',5);
+        com.put('f',4);
+        com.put('I',1);
+        int result = 0;
+        for (char ch:s.toCharArray()){
+            result = result + com.get(ch);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-        System.out.println(romanToInt("MCMXCIV"));
+        System.out.println(romanToInt2("MCMXCIV"));
     }
 }
