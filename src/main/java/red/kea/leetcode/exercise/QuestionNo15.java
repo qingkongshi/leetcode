@@ -12,7 +12,11 @@ import java.util.List;
  */
 public class QuestionNo15 {
 
-    // 超时   垃圾力扣，本机电脑算力都够了
+    /**
+     * 暴力解法     超时   垃圾力扣，本机电脑算力都够了
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> threeSum(int[] nums) {
         if (nums == null || nums.length<3){
             return new ArrayList<>();
@@ -74,6 +78,11 @@ public class QuestionNo15 {
     }
 
 
+    /**
+     * 排序+双指针  评论区大佬的方法
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> threeSum2(int[] nums) {
         // 特殊情况判断
         if (nums == null || nums.length<3){
